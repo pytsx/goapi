@@ -1,7 +1,7 @@
 services:
   goapi:
     container_name: goapi
-    image: github.com/pytsx/goapi
+    image: goapi
     build: .
     ports:
       - "8080:8080"
