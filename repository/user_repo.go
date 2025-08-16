@@ -51,9 +51,9 @@ func (ur *UserRepository) GetUsers() ([]model.User, error) {
 func (ur *UserRepository) CreateUser(user model.User) (int, error) {
 	var id int
 
-	query, err := ur.connection.Prepare("INSERT INTO user " +
-		"(user_name, user_email, user_imgurl)" +
-		" VALUES ($1, $2, $3) RETURNING user_id")
+	query, err := ur.connection.Prepare("INSERT INTO users " +
+		"(name, email, img_url)" +
+		" VALUES ($1, $2, $3) RETURNING id")
 	if err != nil {
 		return -1, err
 	}
