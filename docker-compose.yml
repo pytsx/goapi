@@ -1,14 +1,14 @@
 services:
-  go_api:
-    container_name: go_api
-    image: go_api:latest
+  goapi:
+    container_name: goapi
+    image: github.com/pytsx/goapi
     build: .
     ports:
       - "8080:8080"
     depends_on:
-      - go_db
-  go_db:
-    container_name: go_db
+      - godb
+  godb:
+    container_name: godb
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
